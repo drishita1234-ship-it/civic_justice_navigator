@@ -51,15 +51,18 @@ def predict_case_duration(input_dict):
     top_features_raw = importance_df.head(5)["feature"].tolist()
 
     top_features_clean = []
+
     for f in top_features_raw:
+
         cleaned = (
             f.replace("cat__", "")
-             .replace("num__", "")
-             .replace("type_name_", "")
-             .replace("_", " ")
+            .replace("num__", "")
+            .replace("type_name_", "")
+            .replace("_", " ")
+            .title()
         )
-        top_features_clean.append(cleaned)
 
+        top_features_clean.append(cleaned)
     # -----------------------------
     # Return Final Structured JSON
     # -----------------------------

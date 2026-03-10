@@ -15,5 +15,10 @@ sample_input = {
 
 result = predict_case_duration(sample_input)
 
-print("Predicted Duration (days):", result)
-print("Predicted Duration (years):", round(result/365, 2))
+print("Prediction Result:")
+print(result)
+
+print("\nPredicted Duration (days):", result["predicted_duration_days"])
+print("Predicted Duration (years):", result["predicted_duration_years"])
+print("Risk Level:", result["risk_level"])
+print("Key Influencing Factors:", result["key_influencing_factors"])
